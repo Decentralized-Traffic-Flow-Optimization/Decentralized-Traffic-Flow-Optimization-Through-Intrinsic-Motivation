@@ -6,7 +6,7 @@ using Random, Statistics, Plots
 #N: number of cars
 #vₘ: maximum velocity allowed
 #ρ: density
-#p_brake: braking probability
+#p_brake : braking probability
 ################################
 function NaSch_road(L :: Int64, ρ:: Float64 , vₘ)
     #Road initialization

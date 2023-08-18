@@ -1,5 +1,5 @@
 using Distributed
-addprocs(80, exeflags=["--project", "--threads=1"])
+addprocs(4, exeflags=["--project", "--threads=1"])
 @everywhere include("NaSch_model.jl")
 @everywhere include("channel_empowerment.jl")
 @everywhere using Random, Statistics, Plots, Base.Threads, LinearAlgebra,  BSON ,  LaTeXStrings 

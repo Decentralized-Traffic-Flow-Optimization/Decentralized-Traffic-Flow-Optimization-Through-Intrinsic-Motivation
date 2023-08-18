@@ -5,7 +5,7 @@ floatType = Float64
 
 ###Parameters ####
 #R: road vector with cars (-1: empty cell, +ve integer: car)
-#L: road length
+#L : road length
 #N: number of cars
 #vₘ= maximum velocity allowed
 #x, xₙ :position of agent and leading car on the road respectively

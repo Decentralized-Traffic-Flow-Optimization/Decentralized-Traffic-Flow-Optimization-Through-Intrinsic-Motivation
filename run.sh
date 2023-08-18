@@ -5,8 +5,8 @@
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=50
 ##SBATCH --cpus-per-task=1
-##SBATCH --partition=compute
-#SBATCH --partition=gpu
+#SBATCH --partition=compute
+##SBATCH --partition=gpu
 ##SBATCH --partition=lque
 #SBATCH --time=7-00:00:00
 #SBATCH --mem-per-cpu=2G
