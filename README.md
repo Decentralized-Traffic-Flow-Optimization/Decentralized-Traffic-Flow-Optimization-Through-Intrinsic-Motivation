@@ -2,7 +2,7 @@
 This code is a julia implementation of decentralized traffic flow optimization using intrinsic motivation. 
 
 ###Files###
-- `NaSch.jl`: Contains the implementation of the Nagel-schreckenberg traffic flow simulation model.
+- `NaSch_model.jl`: Contains the implementation of the Nagel-schreckenberg traffic flow simulation model.
 - `channel_empowerment.jl`: Contains functions to calculate channel, empowerment and expected empowermen for an agent.
 - `traffic_flow_empowerment.jl`: Contains functions to calculate traffic flow on the road containing normal cars and different ratios of agents for different densities.
 - Each file containd paramater descriptions at the top
