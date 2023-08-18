@@ -1,11 +1,12 @@
 using Distributed
-addprocs(4, exeflags=["--project", "--threads=1"])
+#remove ClusterManagers if it is not run in HPC##
+using ClusterManagers
+addprocs_slurm(100, exeflags=["--project", "--threads=1"])
+##use addproc(100, exeflags=["--project", "--threads=1"]) instead, if you are not running in HPC##
 @everywhere include("NaSch_model.jl")
 @everywhere include("channel_empowerment.jl")
-@everywhere using Random, Statistics, Plots, Base.Threads, LinearAlgebra,  BSON ,  LaTeXStrings 
-# ClusterManagers
-# DistributedArrays,
-#addprocs_slurm(80, exeflags=["--project", "--threads=1"])
+@everywhere using Random, Statistics, Plots, Base.Threads, LinearAlgebra,  BSON , DistributedArrays, LaTeXStrings 
+
 ###Parameters ####
 #R: road vector with cars (-1: empty cell, +ve integer: car)
 #L: road length
@@ -20,7 +21,7 @@ addprocs(4, exeflags=["--project", "--threads=1"])
 ################################
 
 @everywhere function P_transition( p_brake :: Float64, ρ :: Float64)
-    ##### calculat transition Probability P(v′|v)##########
+    ##### calculate transition Probability P(v′|v)##########
     Pv= zeros(Float64,vₘ+1, vₘ+1)
     rl=100000
     R, _ =  NaSch_road(rl,ρ,vₘ) 
