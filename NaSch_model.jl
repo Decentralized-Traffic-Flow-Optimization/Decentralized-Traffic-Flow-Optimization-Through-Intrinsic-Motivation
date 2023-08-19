@@ -79,6 +79,7 @@ function displace(L :: Int64, R :: Vector{Int64})
 end
 
 function space_avg_velocity(R :: Vector{Int64} )
+    ##1/L(sum(v))##
     v=Int64[]
     L=size(R)[1]
     for i in 1:L
@@ -94,6 +95,7 @@ end
 
 
 function traffic_flow_no_agent(L :: Int64, R :: Vector{Int64},  vₘ :: Int64, p_brake :: Float64, T :: Int64 )
+    ##calculate traffic flow on NaSch road without any agents##
     R_c= copy(R)
     F_v=0.0
     sim = zeros(Int, T, L)

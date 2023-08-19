@@ -128,7 +128,7 @@ end
     end
 
     file_path = "./Flow_$(ρ)density_$(L)road_legthn_$(p_brake)braking_prob_$(Tₕ)step_emp_$(Tₛ)simulation_timesteps.bson"
-    BSON.@save file_path Fv_0 Fv_10  Fv_20 Fv_50 Fv_70 pᵥ sim0 sim10 sim20 sim50 sim70
+    BSON.@save file_path Fv_0 Fv_10  Fv_20 Fv_50 Fv_70 Pv sim0 sim10 sim20 sim50 sim70
     return (Fv_0, Fv_10, Fv_20, Fv_50, Fv_70)
 end
 
@@ -136,9 +136,9 @@ end
 ######_main_######
 
 vₘ=5
-L=10
+L=1000
 p_brake=0.2
-Tₛ =5
+Tₛ =5000
 Tₕ=3
 densities=[]
 ###get range of denities#####
@@ -146,7 +146,6 @@ for ρ in 0.02:0.02:0.7
     push!(densities, ρ)
 end
 println(densities)
-densities=[0.2]
 results = pmap(ρ -> process_density(vₘ,L, p_brake, Tₛ, Tₕ, ρ), densities)
 ( F0, F10, F20, F50,  F70) = 
     ([res[1] for res in results],
