@@ -10,7 +10,7 @@ This code is a julia implementation of decentralized traffic flow optimization u
 ###Prerequisites###
 
 - You need to have Julia installed on your system. You can download it from [julialang.org](https://julialang.org/downloads/).
-- Add necessary packages like (StatsBase, DataStructures, Plots, Statistics, Distributed, LaTeXStrings, etc..) in julia
+- Add necessary packages like (StatsBase, DataStructures, Plots, Statistics, Distributed, BSON, LaTeXStrings, etc..) in julia
 - you can check https://datatofish.com/install-package-julia/ on how to add packages in julia
 - 
 ###Customization###
